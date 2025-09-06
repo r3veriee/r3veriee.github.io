@@ -1,397 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Background of Scouting</title>
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
-    <link rel="manifest" href="manifest.json">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-       <a href="#" id="logoHome" class="logo-link">
-    <div class="logo-row">
-        <h1>Scouting</h1>
-        <img src="images/ssa.png" alt="Singapore Scouts Association">
-    </div>
-</a>
-        <nav> <!--menu system-->
-            <!--hamburger icon for mobile-->
-            <button id="hamIcon">Open Menu</button>
-            <ul>
-                <li><button id="page1btn">The Movement</button></li>
-                <li><button id="page2btn">Hierarchy & Activities</button></li>
-                <li><button id="page3btn">Knots</button></li>
-                <li><button id="page4btn">Badges & Awards</button></li>
-                <li><button id="page5btn">Quiz & Game</button></li>
 
+    <header>
+        <nav>
+            <div class="logo">YourName</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gaming">Gaming</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="pagecontainer">
-     <div class="carousel-wrapper" id="carouselWrapper">
-  <button class="carousel-btn left">&#10094;</button>
-
-  <div class="carousel-container">
-    <div class="carousel-track" id="carouselTrack">
-      <img src="images/backwoodsman.jpg" alt="Backwoodsman">
-      <img src="images/camaraderie.jpg" alt="Camaraderie">
-      <img src="images/outdoorcooking.jpg" alt="Outdoor Cooking">
-      <img src="images/salute.jpg" alt="Scout Salute">
-      <img src="images/tentage.jpg" alt="Tentage">
-      <img src="images/trekking.jpg" alt="Trekking">
-    </div>
-  </div>
-
-  <button class="carousel-btn right">&#10095;</button>
-</div>
-<section id="scoutIntro" class="intro-section">
-  <h2>The Mission of Scouting</h2>
-  <p>
-    To contribute to the education of young people, through a value system based on the Scout Promise and Law, 
-    to help build a better world where people are self-fulfilled as individuals and play a constructive role in society.
-  </p>
-
-  <h3>The Scout Promise</h3>
-  <blockquote>
-    On my honour I promise that I will do my best<br>
-    To do my duty to God and the Republic of Singapore<br>
-    To help other people and<br>
-    To keep the Scout Law
-  </blockquote>
-
-  <h3>The Scout Law</h3>
-  <ul class="scout-law">
-    <li>A Scout is to be trusted</li>
-    <li>A Scout is loyal</li>
-    <li>A Scout makes friends, establishes and maintains harmonious relations</li>
-    <li>A Scout is disciplined and considerate</li>
-    <li>A Scout has courage in all difficulties</li>
-  </ul>
-
-  <h3>The Scout Motto</h3>
-  <p><strong>"Be Prepared"</strong></p>
-  <p class="quote">
-    “Be Prepared... the meaning of the motto is that a scout must prepare himself by previous thinking out 
-    and practicing how to act on any accident or emergency so that he is never taken by surprise.”<br>
-    - <em>Lord Baden-Powell</em>
-  </p>
-
-  <iframe src="https://www.youtube.com/embed/5hlczXycbBs?si=bppk1UTxw1JfIWoN" title="YouTube video player" allowfullscreen></iframe>
-
-</section>
-
-        <section class="page" id="page1">
-            <h2>The Scout Movement</h2>
-            <p>
-                The Scouting Movement began in 1907 when Lieutenant General Robert Baden-Powell organized the first
-                experimental camp on Brownsea Island, England. The camp, which hosted 20 boys from diverse social
-                backgrounds, tested ideas that would later be published in his seminal book, <a href="http://www.thedump.scoutscan.com/yarns00-28.pdf"><em>Scouting for Boys</em></a>.
-                This publication laid the foundation for a worldwide youth movement that emphasized outdoor activities,
-                moral values, leadership, and self-reliance.
-            </p>
-
-            <p>
-                The core principles of Scouting are encapsulated in the Scout Promise and Law, which promote duty to
-                God, loyalty to one's country, helping others, and personal integrity. The movement is non-political and
-                open to all, regardless of race or creed. It fosters holistic development through learning-by-doing,
-                leadership opportunities, service projects, and nature-based experiences.
-            </p>
-
-            <h3>Growth and Global Reach</h3>
-            <p>
-                From its British roots, Scouting spread rapidly across the British Empire and beyond. By 1920, the first
-                World Scout Jamboree was held in London, gathering over 8,000 Scouts from around the globe. The World
-                Organization of the Scout Movement (WOSM) was formed in 1922 to coordinate international efforts. As of
-                today, Scouting boasts over 50 million members across more than 170 countries.
-            </p>
-
-            <h3>Objectives of the Scout Movement</h3>
-            <ul>
-                <li>Develop physical, intellectual, emotional, social, and spiritual potential.</li>
-                <li>Foster teamwork and leadership through patrol-based systems.</li>
-                <li>Promote environmental stewardship and sustainability.</li>
-                <li>Instill a lifelong commitment to service and citizenship.</li>
-            </ul>
-
-            <h3>Singapore Scouting</h3>
-            <p>
-                Scouting arrived in Singapore in 1910, just three years after the movement began. It was introduced by
-                Frank Cooper Sands and began with the establishment of the first Scout troop at Raffles Institution.
-                Known as the “Father of Scouting in Singapore,” Sands laid the groundwork for what would become a vital
-                national institution. Today, the Singapore Scout Association operates under the Ministry of Education
-                and the World Scout Movement, offering programs for Cub Scouts, Scouts, Venture Scouts, and Rover
-                Scouts.
-            </p>
-
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span id="name-typewriter"></span></h1>
+                <p>A passionate developer building web applications.</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
         </section>
-        <section class="page" id="page2">
-            <h2>Troop Hierarchy & Activities</h2>
 
-            <h3>🟥 National-Level Structure (Singapore Scout Association)</h3>
-            <p>
-                The Singapore Scout Association (SSA) is structured to deliver both national strategy and grassroots
-                execution. It includes formal leadership roles, councils, commissioners, and operational units.
-            </p>
-
-            <ul>
-                <li><strong>Chief Scout:</strong> The President of Singapore serves as the ceremonial head and grants
-                    warrants and major awards to adult leaders and commissioners.</li>
-                <li><strong>Scout Council:</strong> Composed of both uniformed and lay officials, this council provides
-                    strategic direction and financial oversight for the entire Association.</li>
-                <li><strong>Commissioners' Council:</strong> Develops and enforces operational policies, training
-                    standards, and programmatic direction across all scouting sections.</li>
-                <li><strong>Headquarters Staff:</strong> A professional administrative team that supports logistics,
-                    finance, records, and day-to-day operations.</li>
-                <li><strong>Leadership Academy:</strong> The national center for leadership development, responsible for
-                    designing and delivering structured training to leaders and adult volunteers.</li>
-                <li><strong>Chief Commissioner:</strong> The highest-ranking uniformed officer overseeing all aspects of
-                    SSA operations.</li>
-                <li><strong>Deputy and Assistant Chief Commissioners:</strong> Each responsible for a key portfolio such
-                    as youth program, training, or administration.</li>
-                <li><strong>National Training Commissioner:</strong> Oversees all adult training programs and ensures
-                    compliance with global standards.</li>
-                <li><strong>National Programme Commissioner:</strong> Designs and manages the youth progression and
-                    badge frameworks.</li>
-                <li><strong>International/Relations Commissioner:</strong> Manages relationships with other National
-                    Scout Organizations, WOSM, and oversees international exchanges and jamborees.</li>
-                <li><strong>Area and District Commissioners:</strong> Implement policies and coordinate scouting
-                    activities within their assigned regions (areas and districts).</li>
-            </ul>
-
-            <p>
-                These leadership levels ensure that national goals align with grassroots delivery and that policies are
-                properly implemented across all groups.
-            </p>
-
-            <h3>🟦 Unit-Level Structure (Troop & Patrol System)</h3>
-            <p>
-                At the unit (e.g., troop) level, leadership is youth-centered, guided by trained adult leaders. The
-                system is based on empowering Scouts to lead and work collaboratively through patrols.
-            </p>
-
-            <ul>
-                <li><strong>Group Scout Leader (GSL):</strong> The overall adult leader who oversees the entire scout
-                    group (which may include Cubs, Scouts, Ventures, and Rovers).</li>
-                <li><strong>Troop Leaders (TLs):</strong> Form the adult executive committee that supports and manages
-                    the Troop's development and program delivery.</li>
-                <li><strong>Assistant Troop Leaders (ATLs):</strong> Support the TLs in managing logistics, training,
-                    and Scout welfare.</li>
-                <li><strong>Senior Patrol Leaders (SPLs):</strong> Experienced youth leaders who coordinate activities
-                    across different patrols, often mentor newer Scouts.</li>
-                <li><strong>Patrol Leaders (PLs):</strong> Lead a group of 6-8 Scouts (a patrol), delegate tasks, and
-                    ensure everyone participates in activities.</li>
-                <li><strong>Assistant Patrol Leaders (APLs):</strong> Support the PL and assume leadership when the PL
-                    is absent or needs help.</li>
-                <li><strong>Quartermaster:</strong> Responsible for maintaining, organizing, and issuing the troop's
-                    camping and activity equipment.</li>
-                <li><strong>Secretary:</strong> Keeps meeting minutes, attendance, and troop documentation.</li>
-            </ul>
-
-            <h3>🟨 Key Leadership Functions</h3>
-            <ul>
-                <li><strong>The Chief Scout:</strong> Officially endorses leadership appointments (warrants) and awards
-                    adult recognitions.</li>
-                <li><strong>The Scout Council:</strong> Ensures activities are aligned with the SSA's mission, vision,
-                    and are financially sustainable.</li>
-                <li><strong>Commissioners' Council:</strong> Sets policies, training standards, and national program
-                    benchmarks.</li>
-                <li><strong>Area & District Commissioners:</strong> Localize policy implementation and provide
-                    mentorship to unit-level leaders.</li>
-                <li><strong>Troop-Level Leaders:</strong> Facilitate weekly meetings, campouts, progress reviews, badge
-                    testing, and Scout welfare.</li>
-            </ul>
-
-            <h3>🧭 Core Activities at the Troop Level</h3>
-            <ul>
-                <li><strong>Weekly Troop Meetings:</strong> Planned by the SPL and PLs, these include badge work, games,
-                    and teamwork-building exercises.</li>
-                <li><strong>Camping:</strong> Includes weekend camps and longer expeditions, emphasizing self-reliance
-                    and pioneering skills.</li>
-                <li><strong>Hikes and Expeditions:</strong> Develops stamina, orienteering, and outdoor survival
-                    capabilities.</li>
-                <li><strong>Community Service Projects:</strong> Flag days, fundraisers, environmental projects, and
-                    public events.</li>
-                <li><strong>National Events:</strong> Participation in jamborees, national parades, and Scouting
-                    exhibitions.</li>
-                <li><strong>Training Workshops:</strong> Patrol Leader training courses, first aid certifications, and
-                    specialized skills clinics.</li>
-            </ul>
-
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <img src="https://via.placeholder.com/200" alt="A photo of you" class="about-photo">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm a software developer with a passion for creating clean, efficient, and user-friendly digital experiences. I specialize in front-end development but also have experience with back-end technologies.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, hiking, or reading a good book. I'm always eager to learn and take on new challenges.
+                    </p>
+                </div>
+            </div>
         </section>
-<section class="page" id="page3">
-  <h2>Types of Knots & Lashings</h2>
-  <p>
-    Knot tying is a core Scouting skill. Here are 9 important knots and lashings every Scout should know:
-  </p>
 
-  <div class="knot-grid">
-  <div class="knot-card">
-    <div class="knot-sprite bg-clovehitch"></div>
-    <p>Clove Hitch</p>
-    <div class="knot-desc">Used to start lashings and for temporary fastening to poles. Very reliable and can be made into a clove hitch - half hitch to be more secured.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-figure8"></div>
-    <p>Figure of 8</p>
-    <div class="knot-desc">Prevents ropes from slipping through holes or pulleys.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-bowline"></div>
-    <p>Bowline</p>
-    <div class="knot-desc">Creates a fixed loop; reliable and easy to untie after loading. Often referred as the King of Knots.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-squarelash"></div>
-    <p>Square Lashing</p>
-    <div class="knot-desc">Used to bind two poles at a 90° angle securely. Requires clove hitch.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-diagonallash"></div>
-    <p>Diagonal Lashing</p>
-    <div class="knot-desc">Secures poles that cross at non-right angles or are prone to shifting. Requires clove hitch.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-tripodlash"></div>
-    <p>Tripod Lashing</p>
-    <div class="knot-desc">Used to build tripod structures like cooking stands or signal towers. Requires clove hitch and shear lashing.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-shearlash"></div>
-    <p>Shear Lashing</p>
-    <div class="knot-desc">Used to join two poles end-to-end or for A-frames. can be made into tripod lash when joined with three poles instead of two.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-sheepshank"></div>
-    <p>Sheepshank</p>
-    <div class="knot-desc">Shortens a rope or bypasses a worn section.</div>
-  </div>
-  <div class="knot-card">
-    <div class="knot-sprite bg-sheetbend"></div>
-    <p>Sheet Bend</p>
-    <div class="knot-desc">Extremely useful to connect two ropes of unequal thickness securely.</div>
-  </div>
-</div>
-
-</section>
-<!-- === PAGE 4: Badges & Awards === -->
-<div id="page4" class="page">
-  <h2>Proficiency (Skill) Badges</h2>
-  <div class="badge-grid grid-proficiency">
-    <div class="badge-card">
-      <h3>First Aid</h3>
-      <p>Treating injuries, CPR, and emergency response skills.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Camping</h3>
-      <p>Tenting, fire safety, and outdoor survival.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Cooking</h3>
-      <p>Preparing meals outdoors with hygiene and nutrition.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Swimming</h3>
-      <p>Stroke proficiency and water safety techniques.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Photography</h3>
-      <p>Capturing photos with proper lighting and framing.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Environmental</h3>
-      <p>Conservation, eco-projects, and sustainability awareness.</p>
-    </div>
-  </div>
-
-  <h2>Progress Awards (Singapore)</h2>
-  <div class="badge-grid grid-progress">
-    <div class="badge-card">
-      <h3>Bronze Progress Award</h3>
-      <p>Basic Scouting skills, including knots and first aid.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Silver Progress Award</h3>
-      <p>Intermediate leadership and outdoor skills.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Gold Progress Award</h3>
-      <p>Community service and advanced Scouting responsibilities.</p>
-    </div>
-  </div>
-
-  <h2>Special Awards</h2>
-  <div class="badge-grid grid-special">
-    <div class="badge-card">
-      <h3>President's Scout Award</h3>
-      <p>Highest honour for consistent excellence and leadership.</p>
-    </div>
-    <div class="badge-card">
-      <h3>Chief Commissioner's Award</h3>
-      <p>Recognizes exceptional initiative and service.</p>
-    </div>
-    <div class="badge-card">
-      <h3>National Service Badges</h3>
-      <p>Awarded for public service and national event involvement.</p>
-    </div>
-  </div>
-
-  <h2>Badge Placement on Uniform</h2>
-  <div class="placement-section">
-    <img src="images/scoutsuniform.jpg" alt="Scout Uniform" class="uniform-img">
-    <div class="placement-info">
-      <ul>
-        <li><strong>Scout Badge:</strong> Left sleeve, ~1cm above hemline once attained.</li>
-        <li><strong>Area Emblem:</strong> Center of right breast pocket.</li>
-        <li><strong>Group Emblem:</strong> Above right breast pocket, 1cm above name badge.</li>
-        <li><strong>Name Badge:</strong> Above right breast pocket, touching the seam.</li>
-        <li><strong>Patrol Patch:</strong> (Optional) Below shoulder badge on left sleeve.</li>
-        <li><strong>Shoulder Flash:</strong> "SINGAPORE SCOUTS" badge on both sleeves, 1cm from seam.</li>
-        <li><strong>Epaulettes:</strong> Colour depends on section (e.g. Dark Green for Scouts, Maroon for Venture).</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-
-      <section class="page" id="page5">
-  <h2>Test your knowledge!</h2>
-  <form id="quizForm">
-    <div id="quizContainer"></div>
-    <button id="btnSubmit" type="button">Submit Quiz</button>
-    <button id="btnReset" type="button">Reset Quiz</button>
-    <h3 id="scorebox">Not submitted</h3>
-  </form>
-
-
-            <div id="fireGame" class="mini-game">
-  <h2>🔥 Start the Fire!</h2>
-  <p>Hold the button to blow gently. Don't overdo it!</p>
-  <div class="meter">
-    <div id="meter-fill"></div>
-    <div class="safe-zone"></div>
-  </div>
-  <button id="blowBtn">Hold to Blow</button>
-  <p id="fireResult"></p>
-</div>
-
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250/333/fff?text=Project+One" alt="Project 1 Screenshot">
+                    <h3>Project One</h3>
+                    <p>A brief description of the project. What it does, the technologies used, and its purpose.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250/555/fff?text=Project+Two" alt="Project 2 Screenshot">
+                    <h3>Project Two</h3>
+                    <p>A brief description of the project. What it does, the technologies used, and its purpose.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250/777/fff?text=Project+Three" alt="Project 3 Screenshot">
+                    <h3>Project Three</h3>
+                    <p>A brief description of the project. What it does, the technologies used, and its purpose.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <footer>
-            <img id="qrCodeImg" src="images/qrcodeimg.png" alt="Scouting QR Code">
-            <div class="footer-info">Lab 02, Rizq Rayyan Ardiyanta Mohd Syahrir Kartayasa Putra, 231063F</div>
-        </footer>
+
+        <section id="gaming">
+            <h2>Gaming Profiles</h2>
+        </section>
+        
+        <section id="osu">
+            <h3>osu! Profile</h3>
+            <div class="osu-profile-card">
+                <div class="osu-header">
+                    <img src="https://a.ppy.sh/11243637?1675102078.jpeg" alt="osu! profile picture" class="osu-pfp">
+                    <div class="osu-user-info">
+                        <h4>nanawo</h4>
+                        <p>Lvl 106 | Singapore</p>
+                    </div>
+                </div>
+                <div class="osu-stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Global Rank</span>
+                        <span class="stat-value">#3,623</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Performance</span>
+                        <span class="stat-value">11,940pp</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Accuracy</span>
+                        <span class="stat-value">98.92%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Play Count</span>
+                        <span class="stat-value">110,317</span>
+                    </div>
+                </div>
+                <a href="https://osu.ppy.sh/users/11243637" target="_blank" class="cta-button profile-button">View Full Profile</a>
+            </div>
+        </section>
+        
+        <section id="celeste">
+            <h3>Celeste Completion</h3>
+            <div class="celeste-completion-container">
+                <p class="celeste-description">Tracking my journey through the highs and lows of Mount Celeste. Here is my live progress sheet!</p>
+                <div class="celeste-sheet-embed">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR8v3uKjR6H7k_WfP699s5X8d1lJkIas-j9f5c4aFm7hJ3w1Jk_Vz4m9Z7uG8n7Q2w3A0e7A/pubhtml?gid=1356987404&single=true&widget=false&headers=false&chrome=false"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+            <a href="mailto:youremail@example.com" class="cta-button">Say Hello</a>
+        </section>
     </main>
 
-<audio id="audio-correct" src="audio/yay.mp3"></audio>
-<audio id="audio-wrong" src="audio/buzzer.mp3"></audio>
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
