@@ -1,0 +1,617 @@
+/* 1. Reset */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 2. Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #5a5a5a;
+}
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+/* 3. Tabs */
+#tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+#tabs button {
+  padding: 10px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+#tabs button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+#tabs button,
+nav ul li button {
+  background-color: #222;
+  color: white;
+  border: 1px solid #444;
+}
+#tabs button:hover,
+nav ul li button:hover {
+  background-color: #ffc107;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* 4. Page Container */
+.page {
+  width: 100%;
+  min-height: 80vh;
+  background: rgb(66, 66, 66);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+#page1 { border-left: 6px solid #e74c3c; }
+#page2 { border-left: 6px solid #27ae60; }
+#page3 { border-left: 6px solid #2980b9; }
+#page4 { border-left: 6px solid #f1c40f; }
+#page5 { border-left: 6px solid rgba(141,20,240,0.44); }
+
+/* 5. Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+#hamIcon {
+  display: none;
+}
+
+/* 6. Header & Footer */
+header,
+footer {
+  background-color: #125a36;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #083f28;
+  animation: fadeInHeader 1s ease-out;
+}
+header h1 {
+  animation: colorCycle 6s infinite;
+}
+header img,
+.logo-row img {
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  margin-top: 0.5rem;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.logo-row h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+@keyframes fadeInHeader {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes colorCycle {
+  0% { color: #ff7675; }
+  33% { color: #74b9ff; }
+  66% { color: #55efc4; }
+  100% { color: #ff7675; }
+}
+
+/* 7. Buttons */
+button {
+  background-color: #ffc107;
+  color: #111;
+  padding: 14px 24px;
+  margin: 5px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  background-color: #e0aa00;
+  transform: translateY(-2px);
+}
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+button:disabled {
+  background-color: #cccccc;
+  color: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* make sure taps fire :active immediately */
+button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* define the “click” keyframe */
+@keyframes buttonClick {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  40% {
+    transform: scale(0.95) translateY(2px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* fire the animation on press */
+button:active {
+  animation: buttonClick 0.2s ease-out;
+  background-color: #e0aa00;  /* keep your desktop active color */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 8. Carousel */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+}
+.carousel-track img {
+  width: 100%;
+  max-height: 75vh;
+  height: auto;
+  flex: 0 0 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+.carousel-btn.left { left: 20px; }
+.carousel-btn.right { right: 20px; }
+
+/* 9. Intro Section */
+.intro-section {
+  background: #2f2f2f;
+  color: #fff;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+.intro-section blockquote {
+  background: #444;
+  border-left: 5px solid #ffc107;
+  padding: 1rem;
+  font-style: italic;
+  margin: 1rem auto;
+}
+.intro-section .scout-law {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  display: inline-block;
+  text-align: left;
+}
+.intro-section .scout-law li::before {
+  content: "•";
+  color: #55efc4;
+  margin-right: 0.5rem;
+}
+.intro-section .quote {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* 10. Page 1: The Scout Movement */
+#page1 h2, #page1 h3 {
+  color: #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 5px;
+  margin-top: 1.5rem;
+}
+#page1 p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+#page1 ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#page1 ul li {
+  margin-bottom: 0.5rem;
+}
+#page1 em {
+  color: #f1c40f;
+  font-style: italic;
+}
+#page1 {
+  background: linear-gradient(to right, #3a3a3a, #2e2e2e);
+}
+
+/* 11. Page 2: Troop Hierarchy & Activities */
+#page2 h2, #page2 h3 {
+  color: #27ae60;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 6px;
+  margin-top: 1.5rem;
+}
+#page2 p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+#page2 ul {
+  list-style: square;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#page2 ul li {
+  margin-bottom: 0.6rem;
+}
+#page2 strong {
+  color: #2ecc71;
+}
+#page2 {
+  background: linear-gradient(to right, #2f4032, #1f2d24);
+}
+
+/* 12. Page 3: Knots Grid */
+.knot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .knot-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.knot-card {
+  background: #444;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.knot-card:hover {
+  transform: scale(1.05);
+}
+.knot-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.knot-card p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.knot-desc {
+  display: none;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #ccc;
+  transition: opacity 0.3s;
+}
+.knot-card:hover .knot-desc {
+  display: block;
+}
+.knot-sprite {
+  width: 200px;
+  height: 110px;
+  background-image: url('images/css_sprites.png');
+  background-repeat: no-repeat;
+  background-size: 2048px 170px;
+  display: block;
+  margin: 0 auto 8px auto;
+  border-radius: 8px;
+  background-color: #222; /* fallback */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background-position-y: center;
+}
+.bg-diagonallash   { background-position-x:    0px; }
+.bg-shearlash      { background-position-x: -250px; }
+.bg-sheepshank     { background-position-x: -454px; }
+.bg-sheetbend      { background-position-x: -690px; background-position-y: 0px;}
+.bg-tripodlash     { background-position-x: -910px; background-position-y: 0px;}
+.bg-figure8        { background-position-x: -1150px; background-position-y: 0px;}
+.bg-squarelash     { background-position-x: -1380px; }
+.bg-clovehitch     { background-position-x: -1600px; }
+.bg-bowline        { background-position-x: -1820px; }
+
+
+@media (max-width: 600px) {
+  .knot-sprite {
+    width: 110px;
+    height: 60px;
+    background-size: 2048px 170px; /* keep this as-is */
+    margin: 0 auto 6px auto;
+    border-radius: 6px;
+  }
+}
+
+
+/* 13. Page 4: Badges & Awards */
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.grid-proficiency .badge-card {
+  flex: 1 1 180px;
+  max-width: 200px;
+}
+.grid-progress .badge-card {
+  flex: 1 1 220px;
+  max-width: 240px;
+}
+.grid-special .badge-card {
+  flex: 1 1 260px;
+  max-width: 280px;
+}
+.badge-card {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #000;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.badge-card:hover {
+  transform: scale(1.05);
+}
+
+/* 14. Placement Section */
+.placement-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.uniform-img {
+  width: 60%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+.placement-info {
+  background-color: #2c2c2c;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 800px;
+  color: #fff;
+}
+.placement-info ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.placement-info li {
+  margin-bottom: 0.75rem;
+}
+
+/* 15. Quiz */
+.quiz-option {
+  display: block;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.quiz-option.selected-option {
+  background: #fff7cc;
+  color: #111;
+}
+.quiz-option.correct {
+  background: #c8f7c5;
+  color: #111;
+  font-weight: bold;
+}
+.quiz-option.wrong {
+  background: #f7bdbb;
+  color: #111;
+}
+
+
+/* 16. Mini Game */
+.mini-game {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 400px;
+}
+.meter {
+  position: relative;
+  height: 30px;
+  background: #ddd;
+  border: 2px solid #999;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+#meter-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #00bfff, #ff8c00);
+  transition: width 0.05s linear;
+}
+.safe-zone {
+  position: absolute;
+  left: 40%;
+  width: 20%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.3);
+  border-left: 2px dashed green;
+  border-right: 2px dashed green;
+}
+#blowBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 17. Media Queries */
+@media (max-width: 800px) {
+  /* Carousel */
+  .carousel-container {
+    max-width: 90vw;
+    padding: 0 10px;
+  }
+  .carousel-track img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: cover;
+    margin: 0 4px;
+  }
+  .carousel-btn {
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin: 0 0.5em;
+  }
+  .carousel-btn.left {
+    left: 10px;
+  }
+  .carousel-btn.right {
+    right: 10px;
+  }
+
+  /* Hide QR and mark mobile */
+  #qrCodeImg {
+    display: none;
+  }
+  h1 {
+    background: lightgreen;
+  }
+  h1::after {
+    content: "(mobile)";
+  }
+
+  /* Mobile nav toggle */
+  nav {
+    padding: 0.5rem 1rem;
+  }
+  #hamIcon {
+    display: block;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  nav ul {
+    display: none;
+  }
+  .menuShow {
+    display: block;
+  }
+  #tabs {
+    flex-direction: column;
+  }
+  #tabs button {
+    width: 100%;
+  }
+  nav ul li {
+    display: block;
+    margin: 4px 0;
+  }
+  nav ul li button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Header adjustments */
+  header h1 {
+    font-size: 1.4rem;
+    margin: 0.3rem 0;
+  }
+  header {
+    padding: 0.6rem 1rem;
+  }
+  body {
+    padding-top: 80px;
+    box-sizing: border-box;
+  }
+}
