@@ -48,19 +48,29 @@ section h3 { font-size: 2rem; margin-bottom: 30px; }
 header {
     background: rgba(26, 26, 45, 0.7);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     border-bottom: 1px solid var(--border-color);
     padding: 1.2rem 5%;
     position: sticky; top: 0; z-index: 1000;
 }
 nav { display: flex; justify-content: space-between; align-items: center; }
 nav .logo { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--text-heading); }
-nav .nav-links { list-style: none; display: flex; flex-wrap: wrap; }
-nav .nav-links li { margin-left: 30px; }
-nav .nav-links a { text-decoration: none; color: var(--text-body); font-weight: 500; transition: color 0.3s ease; }
+nav .nav-links { list-style: none; display: flex; }
+nav .nav-links li { margin: 0 15px; }
+nav .nav-links a { text-decoration: none; color: var(--text-body); font-weight: 500; transition: color 0.3s ease; padding: 5px 0; }
 nav .nav-links a:hover { color: var(--primary-accent); }
+.hamburger { display: none; cursor: pointer; }
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-heading);
+    transition: all 0.3s ease-in-out;
+}
 
-/* --- HERO SECTION & AURORA BACKGROUND --- */
-/* --- HERO SECTION & AURORA BACKGROUND --- */
+
+/* --- HERO SECTION (Firefox Lag Fix) --- */
 #hero {
     min-height: 90vh;
     display: flex;
@@ -68,11 +78,11 @@ nav .nav-links a:hover { color: var(--primary-accent); }
     align-items: center;
     text-align: center;
     overflow: hidden;
-    /* Add this new background property */
+    /* Simplified gradient for better performance on Firefox */
     background: 
-        radial-gradient(at 20% 25%, hsla(196, 100%, 50%, 0.15), transparent 35%),
-        radial-gradient(at 80% 35%, hsla(271, 76%, 53%, 0.15), transparent 40%),
-        radial-gradient(at 50% 90%, hsla(34, 100%, 50%, 0.15), transparent 45%);
+        radial-gradient(at 15% 20%, hsla(323, 84%, 67%, 0.25), transparent 50%),
+        radial-gradient(at 80% 30%, hsla(240, 67%, 66%, 0.25), transparent 50%),
+        radial-gradient(at 50% 80%, hsla(43, 100%, 78%, 0.2), transparent 50%);
 }
 .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1rem; }
 .hero-content p { font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
@@ -83,21 +93,7 @@ nav .nav-links a:hover { color: var(--primary-accent); }
     animation: blink 0.7s steps(1) infinite;
 }
 @keyframes blink { 50% { border-color: transparent; } }
-.aurora-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: -1; }
-.aurora-dot { 
-    position: absolute; 
-    border-radius: 50%; 
-    filter: blur(80px); /* Reduced from 100px */
-    opacity: 0.4; 
-    animation: drift 20s infinite alternate; 
-}
-.aurora-dot-1 { width: 400px; height: 400px; background-color: var(--primary-accent); top: 10%; left: 15%; }
-.aurora-dot-2 { width: 350px; height: 350px; background-color: var(--secondary-accent); top: 40%; right: 10%; animation-duration: 25s; }
-.aurora-dot-3 { width: 300px; height: 300px; background-color: #FFDDAA; bottom: 5%; left: 30%; animation-duration: 18s; }
-@keyframes drift {
-    from { transform: translate(-50px, -80px); } /* Rotation removed */
-    to { transform: translate(50px, 80px); }    /* Rotation removed */
-}
+.aurora-background { display: none; } /* This is not used but kept for reference */
 
 /* --- ABOUT SECTION --- */
 .about-container { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 40px; text-align: left; }
@@ -194,6 +190,12 @@ nav .nav-links a:hover { color: var(--primary-accent); }
 .events-list ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;}
 .events-list li { font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-heading); }
 
+/* --- VIDEO SHRINKING (Firefox Fix) --- */
+.video-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
 .video-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: 12px; border: 1px solid var(--border-color); }
 .video-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; }
 
@@ -245,7 +247,6 @@ nav .nav-links a:hover { color: var(--primary-accent); }
     opacity: 0.8;
 }
 
-
 /* --- GOALS SECTION --- */
 #goals { background-color: var(--bg-card); }
 .goals-list { max-width: 800px; margin: 0 auto; text-align: left; }
@@ -257,7 +258,7 @@ nav .nav-links a:hover { color: var(--primary-accent); }
 #tributes { background-color: var(--bg-dark); }
 .tributes-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Set to 1 column to stack the full-width cards */
+    grid-template-columns: 1fr;
     gap: 25px;
     max-width: 1000px;
     margin: 0 auto;
@@ -296,20 +297,47 @@ nav .nav-links a:hover { color: var(--primary-accent); }
 /* --- FOOTER --- */
 footer { background-color: var(--bg-card); text-align: center; padding: 20px; border-top: 1px solid var(--border-color); }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- RESPONSIVE DESIGN (Hamburger Menu Logic) --- */
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 80px; /* Match header height */
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(26, 26, 45, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        width: 100%;
+        height: calc(100vh - 80px);
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-links li {
+        margin: 16px 0;
+    }
+    .nav-links.active {
+        left: 0;
+    }
+}
 @media (max-width: 768px) {
-    nav .nav-links { justify-content: center; gap: 10px; }
-    nav .nav-links li { margin-left: 15px; }
     section h2 { font-size: 2.2rem; }
     .about-container { flex-direction: column; text-align: center; }
     .timeline::after { left: 20px; }
     .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; }
     .timeline-item:nth-child(even) { left: 0; }
     .timeline-item::after { left: 12.5px; }
-}
-
-/* --- Video Player Sizing --- */
-.video-container {
-    max-width: 800px; /* Adjust this value to make it bigger or smaller */
-    margin: 0 auto;   /* This centers the container */
 }

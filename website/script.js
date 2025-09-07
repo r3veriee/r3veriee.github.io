@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 2. Typewriter Effect
     const typewriterElement = document.getElementById('name-typewriter');
-    const name = "Rayyan"; // Updated your name here
+    const name = "Rayyan";
     let index = 0;
 
     function type() {
@@ -24,15 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
         type();
     }
     
-    // 3. Interactive Card Border Effect (No longer used in current design, but harmless)
-    const cards = document.querySelectorAll('.project-card, .osu-profile-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
+    // 3. Hamburger Menu Logic
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
         });
     });
 
