@@ -107,6 +107,8 @@ nav {
 #home h1 { font-size: 4rem; margin-bottom: 10px; }
 #home .subtitle { font-size: 1.5rem; color: var(--secondary-accent); font-weight: 600; margin-bottom: 20px; }
 
+
+
 /* --- PORTFOLIO SECTION --- */
 #portfolio { background-color: var(--bg-card); }
 .portfolio-grid {
@@ -137,7 +139,12 @@ nav {
     display: block;
     background-color: #111; 
 }
-.portfolio-content { padding: 25px; }
+.portfolio-content {
+    padding: 25px;
+    position: relative;
+    z-index: 2; /* Forces the text to sit on top of the video */
+    background-color: var(--bg-dark); /* Gives the text a solid background to hide the video bleed */
+}
 .portfolio-content h3 { margin-bottom: 10px; color: var(--text-heading); font-size: 1.5rem; }
 .portfolio-content p { margin-bottom: 15px; font-size: 0.95rem; color: var(--text-body); }
 .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
@@ -170,3 +177,12 @@ nav {
 
 /* --- FOOTER --- */
 footer { background-color: var(--bg-card); text-align: center; padding: 20px; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+
+
+/* --- UTILITY CLASSES --- */
+.video-contain {
+    object-fit: contain !important;
+    background-color: #111; 
+    transform: scale(2.5);
+    clip-path: inset(0); /* <--- THIS IS THE MAGIC FIX */
+}
