@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizq Rayyan | Game Developer Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="portfolio-style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">Rizq Rayyan</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#personal-site">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" data-aos="fade-up">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Rizq Rayyan</span></h1>
+                <p class="subtitle">Game Developer & Software Engineer</p>
+                <p>I specialize in C#, C++, and the Unity Engine, with a passion for building robust game architectures, replicating complex physics, and creating engaging interactive experiences.</p>
+                <br>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" data-aos="fade-up">
+            <h2>My Projects</h2>
+            <p>A showcase of my software engineering and game development journey at Nanyang Polytechnic.</p>
+            
+            <div class="portfolio-grid">
+                
+                <!-- Project 1: AR Halal Checker -->
+                <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/ar-app.jpg" alt="AR Halal Checker" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3>AR Halal Ingredient Checker</h3>
+                        <div class="tech-stack">
+                            <span>Unity</span><span>C#</span><span>JavaScript</span><span>AR</span>
+                        </div>
+                        <p><strong>Role:</strong> Lead Programmer</p>
+                        <p>Developed an Augmented Reality mobile application designed to scan and verify halal ingredients. Programmed the core scanning and database retrieval mechanics, resulting in a tool that successfully processes and cross-references ingredient lists in real time.</p>
+                        <a href="#" target="_blank" class="cta-button small-btn">View Code / Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Celeste Mobile Clone -->
+                <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/celeste-clone.jpg" alt="Celeste Mobile Clone" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3>"Celeste" Mobile Clone</h3>
+                        <div class="tech-stack">
+                            <span>Unity</span><span>JavaScript</span><span>XML</span><span>Android</span>
+                        </div>
+                        <p><strong>Role:</strong> Gameplay & Systems Programmer</p>
+                        <p>Programmed a fully playable mobile clone of the platformer "Celeste" optimized for Android devices. Features a custom-built XML level reader for dynamic data parsing. Successfully reverse-engineered the original game's tight platforming physics and player-state mechanics.</p>
+                        <a href="#" target="_blank" class="cta-button small-btn">View Code / Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: VVVVVV Clone -->
+                <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/vvvvvv-clone.jpg" alt="VVVVVV Clone" class="portfolio-img">
+                    <div class="portfolio-content">
+                        <h3>"VVVVVV" OpenGL Clone</h3>
+                        <div class="tech-stack">
+                            <span>C++</span><span>OpenGL</span><span>FSM</span>
+                        </div>
+                        <p><strong>Role:</strong> Engine & Gameplay Programmer</p>
+                        <p>Developed a functional clone of the gravity-flipping platformer "VVVVVV" from scratch using a custom OpenGL framework. Engineered unique enemy behaviors and core gameplay loops utilizing Finite State Machines (FSMs), replicating complex physics and collision detection systems.</p>
+                        <a href="#" target="_blank" class="cta-button small-btn">View Code / Demo</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PERSONAL SITE TEASER SECTION -->
+        <section id="personal-site" data-aos="fade-up">
+            <div class="personal-card">
+                <h2>Looking for my Gaming & Community Hub?</h2>
+                <p>While this portfolio focuses on my professional game development and software engineering projects, I also maintain a personal website dedicated to my gaming achievements, Destiny 2 Sherpa runs, and community tributes.</p>
+                <a href="../website/index.html" target="_blank" class="cta-button outline-btn">Visit My Personal Site</a>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" data-aos="fade-up">
+            <h2>Let's Connect</h2>
+            <p>I am currently seeking a Junior Unity Developer position.</p>
+            <br>
+            <a href="mailto:rizq.rayyanbusiness@gmail.com" class="cta-button">Email Me</a>
+            <a href="https://www.linkedin.com/in/rizq-rayyan-330a583a6/" target="_blank" class="cta-button outline-btn">LinkedIn</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Rizq Rayyan Ardiyanta Mohd Syahrir Kartayasa Putra. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+            });
+        });
+    </script>
+</body>
+</html>

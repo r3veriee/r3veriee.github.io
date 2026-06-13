@@ -1,0 +1,172 @@
+/* --- ROOT VARIABLES & GENERAL SETUP --- */
+:root {
+    --bg-dark: #1A1A2D;
+    --bg-card: #2B2A4C;
+    --primary-accent: #F367A4;
+    --secondary-accent: #7A7AD9;
+    --text-heading: #F5F5F5;
+    --text-body: #BDB8D5;
+    --border-color: rgba(245, 245, 245, 0.1);
+    
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY & REUSABLE COMPONENTS --- */
+h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--text-heading); font-weight: 700; }
+section { padding: 80px 5%; text-align: center; position: relative; }
+section h2 { font-size: 2.5rem; margin-bottom: 20px; }
+section p { max-width: 800px; margin: 0 auto 20px auto; font-size: 1.1rem; }
+
+.highlight { color: var(--primary-accent); }
+
+/* --- BUTTONS --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-accent);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid var(--primary-accent);
+    margin: 5px;
+}
+.cta-button:hover {
+    background-color: #d14d85;
+    transform: translateY(-3px);
+}
+.outline-btn {
+    background-color: transparent;
+    color: var(--primary-accent);
+}
+.outline-btn:hover {
+    background-color: var(--primary-accent);
+    color: #fff;
+}
+
+/* --- HEADER & NAV --- */
+header {
+    background-color: rgba(26, 26, 45, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    color: var(--text-body);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--primary-accent); }
+
+/* --- HERO SECTION --- */
+#home {
+    padding-top: 150px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#home h1 { font-size: 4rem; margin-bottom: 10px; }
+#home .subtitle { font-size: 1.5rem; color: var(--secondary-accent); font-weight: 600; margin-bottom: 20px; }
+
+/* --- PORTFOLIO SECTION --- */
+#portfolio { background-color: var(--bg-card); }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.portfolio-card {
+    background-color: var(--bg-dark);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.portfolio-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background-color: #111; 
+}
+.portfolio-content { padding: 25px; }
+.portfolio-content h3 { margin-bottom: 10px; color: var(--text-heading); font-size: 1.5rem; }
+.portfolio-content p { margin-bottom: 15px; font-size: 0.95rem; color: var(--text-body); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+.tech-stack span {
+    background-color: var(--secondary-accent);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.small-btn { padding: 10px 20px; font-size: 0.9rem; margin-top: 5px; }
+
+/* --- PERSONAL SITE SECTION --- */
+#personal-site { 
+    background-color: var(--bg-dark); 
+    padding: 80px 5% 40px 5%;
+}
+.personal-card {
+    background-color: rgba(43, 42, 76, 0.5); /* slightly transparent var(--bg-card) */
+    padding: 50px 30px;
+    border-radius: 15px;
+    border: 1px dashed var(--primary-accent);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- CONTACT SECTION --- */
+#contact { background-color: var(--bg-dark); padding-bottom: 100px; }
+
+/* --- FOOTER --- */
+footer { background-color: var(--bg-card); text-align: center; padding: 20px; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
