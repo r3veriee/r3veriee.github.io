@@ -24,8 +24,8 @@
             <div class="logo">Rizq Rayyan</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#specialisation">Specialisation Project</a></li>
                 <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#personal-site">Community</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -40,6 +40,73 @@
                 <p>I specialize in C#, C++, and the Unity Engine, with a passion for building robust game architectures, making complex physics, and creating engaging interactive experiences.</p>
                 <br>
                 <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <!-- SPECIALISATION PROJECT SECTION -->
+        <section id="specialisation" data-aos="fade-up">
+            <div class="spec-header">
+                <span class="spec-eyebrow">Year 3 Specialisation Project</span>
+                <h2>Chromatic Decay</h2>
+                <p class="spec-tagline">A first-person momentum platformer where velocity preserves the world's colour.</p>
+            </div>
+
+            <div class="spec-grid">
+                <div class="spec-media" data-aos="zoom-in">
+                    <img src="images/chromatic-decay.jpg" alt="Chromatic Decay gameplay screenshot showing a neon trial course" class="spec-img">
+                    <a href="https://youtu.be/M-Xnq2lKjcc" target="_blank" class="spec-play-btn" aria-label="Watch gameplay demo on YouTube">&#9658;</a>
+                </div>
+                <div class="spec-content">
+                    <div class="tech-stack">
+                        <span>Unity</span><span>C#</span><span>Shader Graph</span>
+                    </div>
+                    <p><strong>Role:</strong> Solo Developer — Design, Programming, Art &amp; Audio</p>
+                    <p>You play the Prime Packet, the last surviving data packet in a digital Network collapsing into a colourless void. There is no health bar: standing still triggers the Glitch, a shader-driven visual and audio distortion that stands in for a meter, so staying in motion is the only defence. Chasing that idea shaped a fully diegetic, no-HUD feedback system, an advanced Celeste-inspired movement kit (Dash, Super Jump, Wavedash, Hyperdash, Wallrun), and custom physics overrides to keep every tech-jump feeling weighty and precise.</p>
+                    <p>Solo-built over a 17-week production cycle covering design, programming, art, and audio, and refined through an 11-tester Beta playtest that shaped a full post-Beta accessibility patch (brightness, effect intensity, and audio sliders).</p>
+
+                    <div class="spec-stats">
+                        <div class="spec-stat"><strong>17</strong><span>Week Solo Production</span></div>
+                        <div class="spec-stat"><strong>11</strong><span>Beta Playtesters</span></div>
+                        <div class="spec-stat"><strong>0</strong><span>HUD Elements</span></div>
+                    </div>
+
+                    <a href="https://youtu.be/M-Xnq2lKjcc" target="_blank" class="cta-button">Watch Gameplay Demo</a>
+                </div>
+            </div>
+
+            <div class="spec-features">
+                <h3 class="spec-subheading">Key Technical Systems</h3>
+                <div class="spec-features-grid">
+                    <div class="spec-feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <h4>Motion-Linked Perception</h4>
+                        <p><strong>Problem:</strong> make standing still feel dangerous without a conventional health bar or meter.</p>
+                        <p><strong>Solution:</strong> a screen-space static/chromatic-artifacting shader and a real-time audio low-pass filter, both driven continuously off the player's speed rather than a depleting resource.</p>
+                    </div>
+                    <div class="spec-feature-card" data-aos="fade-up" data-aos-delay="150">
+                        <h4>Frame-Perfect Input Buffering</h4>
+                        <p><strong>Problem:</strong> Wavedash and Super Jump require a dash-into-floor and jump on the same physics frame, causing dropped inputs.</p>
+                        <p><strong>Solution:</strong> a 0.2s Input Buffer System holds the jump command in memory and auto-fires it the instant ground contact is detected.</p>
+                    </div>
+                    <div class="spec-feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Momentum-Preserving Physics</h4>
+                        <p><strong>Problem:</strong> Unity's default collision response kills momentum instantly on landing or hitting a wall.</p>
+                        <p><strong>Solution:</strong> custom, dynamically-reduced landing friction (down to 2%) for long slides, plus vector-projected wall contact that preserves 100% of entry speed into a wallrun.</p>
+                    </div>
+                    <div class="spec-feature-card" data-aos="fade-up" data-aos-delay="250">
+                        <h4>The Trident Hub</h4>
+                        <p><strong>Problem:</strong> confirm all three trials are cleared, in any order the player chooses, before unlocking the Tower.</p>
+                        <p><strong>Solution:</strong> each trial sets an independent completion flag; the Tower's entrance checks all three and only unlocks once every flag is true.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spec-learnings" data-aos="fade-up">
+                <h3 class="spec-subheading">What This Project Taught Me</h3>
+                <ul class="spec-learnings-list">
+                    <li>Diegetic feedback can communicate meaning without menus or bars — but it takes far more iteration to get the intensity right than a numeric UI would.</li>
+                    <li>Engine defaults often have to be overridden: Unity's default collision physics actively fought the parkour feel I wanted, so ground friction and wall-contact behaviour were rebuilt from scratch.</li>
+                    <li>Not every player has the same skill level — the Agility Trial's Boosthoop felt fine in solo testing, but 11 outside playtesters revealed how unintuitive its momentum redirection was without an early tutorial pass.</li>
+                </ul>
             </div>
         </section>
 
@@ -92,15 +159,6 @@
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- PERSONAL SITE TEASER SECTION -->
-        <section id="personal-site" data-aos="fade-up">
-            <div class="personal-card">
-                <h2>Looking for my Gaming & Community Hub?</h2>
-                <p>While this portfolio focuses on my professional game development and software engineering projects, I also maintain a personal website dedicated to my gaming achievements such as Destiny 2 Achievements, osu! accomplishments, gaming goals, and community tributes.</p>
-                <a href="../website/index.html" target="_blank" class="cta-button outline-btn">Visit My Personal Site</a>
             </div>
         </section>
 

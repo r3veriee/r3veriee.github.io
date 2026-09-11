@@ -95,6 +95,11 @@ nav {
 }
 .nav-links a:hover { color: var(--primary-accent); }
 
+@media (max-width: 700px) {
+    nav { flex-wrap: wrap; row-gap: 10px; }
+    .nav-links { gap: 12px 18px; flex-wrap: wrap; justify-content: center; font-size: 0.9rem; }
+}
+
 /* --- HERO SECTION --- */
 #home {
     padding-top: 150px;
@@ -108,6 +113,148 @@ nav {
 #home .subtitle { font-size: 1.5rem; color: var(--secondary-accent); font-weight: 600; margin-bottom: 20px; }
 
 
+
+/* --- SPECIALISATION PROJECT SECTION --- */
+#specialisation {
+    background-color: var(--bg-dark);
+    padding-top: 60px;
+}
+.spec-header { max-width: 800px; margin: 0 auto; }
+.spec-eyebrow {
+    display: inline-block;
+    background-color: rgba(243, 103, 164, 0.12);
+    color: var(--primary-accent);
+    border: 1px solid var(--primary-accent);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+.spec-tagline { color: var(--secondary-accent); font-weight: 600; font-size: 1.15rem; }
+.spec-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto 0 auto;
+    text-align: left;
+    align-items: center;
+}
+.spec-media {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    line-height: 0;
+}
+.spec-img { width: 100%; display: block; }
+.spec-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(26, 26, 45, 0.75);
+    border: 2px solid var(--primary-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.spec-play-btn:hover {
+    background-color: var(--primary-accent);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+.spec-content p {
+    margin: 0 0 15px 0;
+    max-width: none;
+    text-align: left;
+}
+.spec-stats {
+    display: flex;
+    gap: 25px;
+    margin: 20px 0 25px 0;
+    flex-wrap: wrap;
+}
+.spec-stat { display: flex; flex-direction: column; }
+.spec-stat strong {
+    font-family: var(--font-heading);
+    color: var(--primary-accent);
+    font-size: 1.8rem;
+    line-height: 1;
+}
+.spec-stat span { font-size: 0.8rem; color: var(--text-body); margin-top: 4px; }
+
+@media (max-width: 800px) {
+    .spec-grid { grid-template-columns: 1fr; }
+}
+
+.spec-subheading {
+    font-size: 1.5rem;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+.spec-features { margin-top: 70px; }
+.spec-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+}
+.spec-feature-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 22px;
+}
+.spec-feature-card h4 {
+    color: var(--primary-accent);
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+.spec-feature-card p {
+    font-size: 0.88rem;
+    margin: 0 0 8px 0;
+    max-width: none;
+    text-align: left;
+    color: var(--text-body);
+}
+.spec-feature-card p:last-child { margin-bottom: 0; }
+
+.spec-learnings {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    text-align: left;
+}
+.spec-learnings-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.spec-learnings-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 0.98rem;
+}
+.spec-learnings-list li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--primary-accent);
+    font-weight: 700;
+}
 
 /* --- PORTFOLIO SECTION --- */
 #portfolio { background-color: var(--bg-card); }
@@ -157,20 +304,6 @@ nav {
     font-weight: 600;
 }
 .small-btn { padding: 10px 20px; font-size: 0.9rem; margin-top: 5px; }
-
-/* --- PERSONAL SITE SECTION --- */
-#personal-site { 
-    background-color: var(--bg-dark); 
-    padding: 80px 5% 40px 5%;
-}
-.personal-card {
-    background-color: rgba(43, 42, 76, 0.5); /* slightly transparent var(--bg-card) */
-    padding: 50px 30px;
-    border-radius: 15px;
-    border: 1px dashed var(--primary-accent);
-    max-width: 900px;
-    margin: 0 auto;
-}
 
 /* --- CONTACT SECTION --- */
 #contact { background-color: var(--bg-dark); padding-bottom: 100px; }
